@@ -1,0 +1,38 @@
+.main-container {
+  background-color: black;
+  color: white;
+  display: grid;
+  height: 100vh;
+
+  grid-template-areas:
+    'left-aside central-section central-section central-section central-section right-aside';
+}
+
+.central-section {
+  cursor: default;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  grid-area: central-section;
+}
+
+.central-section__title {
+  font-family: 'Press Start 2P';
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.central-section__description {
+  margin: 1rem 0 0 0;
+  text-align: center;
+}
+
+.left-aside {
+  grid-area: left-aside;
+}
+
+.right-aside {
+  grid-area: right-aside;
+}
