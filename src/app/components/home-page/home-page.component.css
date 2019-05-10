@@ -4,7 +4,11 @@
   height: 100vh;
 
   grid-template-areas:
-    'left-aside central-section central-section central-section central-section right-aside';
+    'left-aside central-section central-section central-section central-section right-aside'
+    'left-aside central-section central-section central-section central-section right-aside'
+    'left-aside central-section central-section central-section central-section right-aside'
+    'left-aside central-section central-section central-section central-section right-aside'
+    'left-aside footer footer footer footer right-aside';
 }
 
 .central-section {
@@ -39,4 +43,32 @@
 
 .right-aside {
   grid-area: right-aside;
+}
+
+.footer {
+  display: flex;
+  grid-area: footer;
+  justify-content: center;
+}
+
+.social-list {
+  align-items: center;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-list__item {
+  margin: 0 .5rem;
+}
+
+.social-list__link {
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.social-list__link:hover {
+  opacity: 1;
 }

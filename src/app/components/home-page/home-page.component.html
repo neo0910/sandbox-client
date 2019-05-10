@@ -1,20 +1,28 @@
 <div style="background-color: black;" class="main-container">
-  <aside class="left-aside">
-    <!-- <a
-      *ngFor="let social of socials"
-      class="left-aside__link"
-      [href]="social.link"
-    >
-      {{ social.name }}
-    </a> -->
-  </aside>
+  <aside class="left-aside"></aside>
 
   <section class="central-section">
     <h1 class="central-section__title">Sandbox</h1>
     <p class="central-section__description">
-      by <span class="central-section__easter-egg" (click)="easterEggTrigger()">neo0910</span>
+      by
+      <span
+        class="central-section__easter-egg"
+        (click)="easterEggTrigger()"
+      >
+        neo0910
+      </span>
     </p>
   </section>
+
+  <footer class="footer">
+    <ul class="social-list">
+      <li *ngFor="let social of socials" class="social-list__item">
+        <a class="social-list__link" [href]="social.link" target="_blank">
+          {{ social.name }}
+        </a>
+      </li>
+    </ul>
+  </footer>
   
   <aside class="right-aside"></aside>
 </div>
