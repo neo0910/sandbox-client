@@ -1,5 +1,7 @@
-<div style="background-color: black;" class="main-container">
-  <aside class="left-aside"></aside>
+<div [ngStyle]="{ 'background-color': backgroundColor }" class="main-container">
+  <aside class="left-aside">
+    <a routerLink="/my-counter" routerLinkActive="active">My counter</a>
+  </aside>
 
   <section class="central-section">
     <h1 class="central-section__title">Sandbox</h1>

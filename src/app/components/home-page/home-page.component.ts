@@ -9,6 +9,7 @@ import { ApiService } from '../../services/api.service'
 export class HomePageComponent implements OnInit {
 
   public socials = [];
+  public backgroundColor = 'black';
   private colors = [
     'black',
     '#762915',
@@ -43,6 +44,7 @@ export class HomePageComponent implements OnInit {
  
   ngOnInit() {
     this.getSocials();
+    this.setInitialBackgroundColor();
   }
  
   public getSocials (): void {
@@ -50,10 +52,15 @@ export class HomePageComponent implements OnInit {
   }
 
   public easterEggTrigger (): void {
-    const container = document.getElementsByClassName('main-container')[0];
     const randomIndex = Math.floor(Math.random() * (this.colors.length - 1));
+    this.backgroundColor = this.colors[randomIndex];
+    localStorage.setItem('backgroundColor', this.backgroundColor);
+  }
 
-    container.setAttribute('style', `background-color: ${this.colors[randomIndex]};`);
+  private setInitialBackgroundColor (): void {
+    if (localStorage.getItem('backgroundColor')) {
+      this.backgroundColor = localStorage.getItem('backgroundColor');
+    }
   }
 
 }
