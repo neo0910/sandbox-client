@@ -1,35 +1,77 @@
 .main-container {
   color: white;
-  display: grid;
+  display: flex;
+  flex-flow: row nowrap;
   height: 100vh;
-
-  grid-template-areas:
-    'left-aside central-section central-section central-section central-section right-aside'
-    'left-aside central-section central-section central-section central-section right-aside'
-    'left-aside central-section central-section central-section central-section right-aside'
-    'left-aside central-section central-section central-section central-section right-aside'
-    'left-aside footer footer footer footer right-aside';
 }
 
+.left-aside,
+.right-aside {
+  flex: 1 1 auto;
+}
+
+/* left-aside styles */
+
+.left-aside {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.chapters {
+  display: flex;
+  flex-flow: column nowrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 16px;
+}
+
+.chapters__item {
+  opacity: 0.5;
+  position: relative;
+  transform: translateX(0);
+  transition: all .25s ease;
+}
+
+.chapters__item:hover {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.chapters__item a {
+  color: white;
+  text-decoration: none;
+}
+
+/* central-section styles */
+
 .central-section {
+  flex: 4 1 auto;
+
   cursor: default;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  grid-area: central-section;
+}
+
+.central-section__content {
+  flex: 1 1 auto;
+
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 .central-section__title {
   font-family: 'Press Start 2P';
   font-size: 3rem;
   margin: 0;
-  text-align: center;
   text-transform: lowercase;
+  user-select: none;
 }
 
 .central-section__description {
   margin: 1rem 0 0 0;
-  text-align: center;
 }
 
 .central-section__easter-egg {
@@ -37,38 +79,31 @@
   user-select: none;
 }
 
-.left-aside {
-  grid-area: left-aside;
-}
+.central-section__footer {
+  flex: 0 1 50px;
 
-.right-aside {
-  grid-area: right-aside;
-}
-
-.footer {
+  align-items: center;
   display: flex;
-  grid-area: footer;
   justify-content: center;
 }
 
-.social-list {
-  align-items: center;
+.socials {
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.social-list__item {
+.socials__item {
   margin: 0 .5rem;
 }
 
-.social-list__link {
+.socials__link {
   color: white;
   opacity: 0.5;
   text-decoration: none;
 }
 
-.social-list__link:hover {
+.socials__link:hover {
   opacity: 1;
 }
