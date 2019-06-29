@@ -18,6 +18,7 @@ if (typeof process.env.VUE_APP_BASE_API !== 'undefined') {
 }
 
 Vue.use(VueRouter);
+import router from './routes';
 
 Vue.use(Vuex);
 import store from './store';
@@ -27,4 +28,5 @@ Vue.use(MdButton);
 new Vue({
     store,
     render: h => h(App),
+    router,
 }).$mount('#app');
