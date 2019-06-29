@@ -6,6 +6,10 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
+window.axios = require('axios');
+
+console.log(process.env.VUE_APP_BASE_API);
+
 Vue.use(MdButton);
 
 new Vue({
