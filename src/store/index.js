@@ -8,4 +8,13 @@ export default new Vuex.Store({
     modules: {
         myCounter,
     },
+    state: {
+        sidebarStatus: true,
+    },
+    getters: {
+        getSidebarStatus: state => state.sidebarStatus,
+    },
+    mutations: {
+        toggleSidebar: state => state.sidebarStatus = !state.sidebarStatus,
+    },
 });

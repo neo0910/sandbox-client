@@ -1,10 +1,8 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
 import VueRouter from 'vue-router';
-import { MdButton } from 'vue-material/dist/components';
+import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
-import App from './App.vue';
 
 Vue.config.productionTip = false;
 
@@ -18,12 +16,11 @@ if (typeof process.env.VUE_APP_BASE_API !== 'undefined') {
 }
 
 Vue.use(VueRouter);
-import router from './routes';
+Vue.use(VueMaterial);
 
-Vue.use(Vuex);
 import store from './store';
-
-Vue.use(MdButton);
+import router from './routes';
+import App from './App';
 
 new Vue({
     store,

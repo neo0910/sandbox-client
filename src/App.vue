@@ -1,11 +1,18 @@
 <template>
-    <div id="app">
-        <img
-            alt="Vue logo"
-            src="./assets/logo.png"
+    <div class="md-app">
+        <md-drawer
+            md-swipeable
+            md-permanent="full"
+            :md-active.sync="sidebar"
         >
-
-        <router-link :to="{ name: 'myCounter' }">Перейти к myCounter</router-link>
+            <md-list>
+                <md-list-item>
+                    <router-link :to="{ name: 'myCounter' }">
+                        Перейти к myCounter
+                    </router-link>
+                </md-list-item>
+            </md-list>
+        </md-drawer>
 
         <router-view name="myCounter" />
     </div>
@@ -13,19 +20,36 @@
 
 <script>
 
+    import { mapGetters, mapMutations } from 'vuex';
+
     export default {
         name: 'App',
+        computed: {
+            ...mapGetters([
+                'getSidebarStatus',
+            ]),
+            sidebar: {
+                get () {
+                    return this.getSidebarStatus;
+                },
+                set () {
+                    this.toggleSidebar();
+                },
+            },
+        },
+        methods: {
+            ...mapMutations([
+                'toggleSidebar',
+            ]),
+        },
     };
 
 </script>
 
-<style>
+<style scoped>
 
-    #app {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
+    .md-app {
+        height: 100vh;
     }
 
 </style>
