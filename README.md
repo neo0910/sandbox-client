@@ -1,7 +1,29 @@
 # sandbox-client
-Front-end part of my [sandbox](https://neo0910.github.io/sandbox-client/)
 
-# develop instructions
-ng build --prod --base-href 'https://neo0910.github.io/sandbox-client/' (the first time)
-ng build --prod (after)
-npx ngh --dir /dist/sandbox-client
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
