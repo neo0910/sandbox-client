@@ -4,19 +4,17 @@
             alt="Vue logo"
             src="./assets/logo.png"
         >
-        <MyCounter />
+
+        <router-link :to="{ name: 'myCounter' }">Перейти к myCounter</router-link>
+
+        <router-view name="myCounter" />
     </div>
 </template>
 
 <script>
 
-    import MyCounter from './components/MyCounter.vue';
-
     export default {
         name: 'App',
-        components: {
-            MyCounter,
-        },
     };
 
 </script>
