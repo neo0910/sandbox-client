@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import Vuex from 'vuex';
+import VueRouter from 'vue-router';
 import { MdButton } from 'vue-material/dist/components';
 import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
@@ -15,8 +17,14 @@ if (typeof process.env.VUE_APP_BASE_API !== 'undefined') {
     alert('VUE_APP_BASE_API not defined, create .env file!');
 }
 
+Vue.use(VueRouter);
+
+Vue.use(Vuex);
+import store from './store';
+
 Vue.use(MdButton);
 
 new Vue({
+    store,
     render: h => h(App),
 }).$mount('#app');

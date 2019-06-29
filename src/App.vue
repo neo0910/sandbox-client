@@ -4,11 +4,13 @@
             alt="Vue logo"
             src="./assets/logo.png"
         >
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+        <HelloWorld :msg="getTitle" />
     </div>
 </template>
 
 <script>
+
+    import { mapGetters } from 'vuex';
     import HelloWorld from './components/HelloWorld.vue';
 
     export default {
@@ -16,14 +18,22 @@
         components: {
             HelloWorld,
         },
+        computed: {
+            ...mapGetters([
+                'getTitle',
+            ]),
+        }
     };
+
 </script>
 
 <style>
-#app {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-}
+
+    #app {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+    }
+
 </style>
