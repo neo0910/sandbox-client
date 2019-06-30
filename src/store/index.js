@@ -15,6 +15,12 @@ export default new Vuex.Store({
         getSidebarStatus: state => state.sidebarStatus,
     },
     mutations: {
-        toggleSidebar: state => state.sidebarStatus = !state.sidebarStatus,
+        toggleSidebar: (state, payload) => {
+            if (typeof payload !== 'undefined') {
+                state.sidebarStatus = payload;
+            } else {
+                state.sidebarStatus = !state.sidebarStatus;
+            }
+        },
     },
 });
