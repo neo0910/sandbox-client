@@ -1,10 +1,12 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
+Vue.use(VueMaterial);
 
-Vue.config.productionTip = false;
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
 window.axios = require('axios');
 
@@ -15,12 +17,12 @@ if (typeof process.env.VUE_APP_BASE_API !== 'undefined') {
     alert('VUE_APP_BASE_API not defined, create .env file!');
 }
 
-Vue.use(VueRouter);
-Vue.use(VueMaterial);
-
 import store from './store';
 import router from './routes';
 import App from './App';
+
+Vue.prototype.$isMobile = window.screen.availWidth <= 600;
+Vue.config.productionTip = false;
 
 new Vue({
     store,

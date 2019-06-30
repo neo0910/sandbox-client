@@ -9,7 +9,7 @@ export default new Vuex.Store({
         myCounter,
     },
     state: {
-        sidebarStatus: true,
+        sidebarStatus: false,
     },
     getters: {
         getSidebarStatus: state => state.sidebarStatus,
