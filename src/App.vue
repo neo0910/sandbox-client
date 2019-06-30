@@ -65,7 +65,9 @@
                 'toggleSidebar',
             ]),
             toggleDrawerByRoute () {
-                this.$route.name === 'home' ? this.toggleSidebar(true) : this.toggleSidebar(false);
+                this.$route.name === 'home' && !this.$isMobile
+                    ? this.toggleSidebar(true)
+                    : this.toggleSidebar(false);
             },
         },
     };
@@ -83,9 +85,9 @@
     }
 
     .md-icon-button {
-        bottom: 1rem;
+        bottom: .5rem;
         position: fixed;
-        right: 1rem;
+        right: .5rem;
         width: 80px;
         min-width: 80px;
         height: 80px;
