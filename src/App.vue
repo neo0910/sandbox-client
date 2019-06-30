@@ -52,14 +52,6 @@
                 };
             },
         },
-        methods: {
-            ...mapMutations([
-                'toggleSidebar',
-            ]),
-            toggleDrawerByRoute () {
-                this.$route.name === 'home' ? this.toggleSidebar(true) : this.toggleSidebar(false);
-            },
-        },
         watch: {
             $route () {
                 this.toggleDrawerByRoute();
@@ -67,6 +59,14 @@
         },
         created () {
             this.toggleDrawerByRoute();
+        },
+        methods: {
+            ...mapMutations([
+                'toggleSidebar',
+            ]),
+            toggleDrawerByRoute () {
+                this.$route.name === 'home' ? this.toggleSidebar(true) : this.toggleSidebar(false);
+            },
         },
     };
 
