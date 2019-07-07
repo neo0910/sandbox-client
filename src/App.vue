@@ -5,11 +5,36 @@
             md-persistent="full"
             :md-active.sync="sidebar"
         >
+            <md-toolbar
+                class="md-transparent"
+                md-elevation="0"
+            >
+                <span class="md-title">Navigation</span>
+            </md-toolbar>
+
             <md-list>
-                <md-list-item>
-                    <router-link :to="{ name: 'myCounter' }">
-                        Перейти к myCounter
-                    </router-link>
+                <md-list-item
+                    v-for="app in navigationConfigs"
+                    :key="app.name"
+                    md-expand
+                    :md-expanded.sync="app.expand"
+                >
+                    <md-icon>control_point</md-icon>
+
+                    <h4
+                        @click.stop="$router.push(app.route)"
+                        v-html="app.name"
+                    />
+
+                    <md-list slot="md-expand">
+                        <md-list-item
+                            v-for="item in app.support"
+                            :key="item"
+                            class="md-inset"
+                        >
+                            {{ item }}
+                        </md-list-item>
+                    </md-list>
                 </md-list-item>
             </md-list>
         </md-drawer>
@@ -33,6 +58,16 @@
 
     export default {
         name: 'App',
+        data: () => ({
+            navigationConfigs: [
+                {
+                    expand: false,
+                    name: 'Simple Counter',
+                    route: { name: 'myCounter' },
+                    support: [ 'Vue.js', 'Vuex', 'Vue Material' ],
+                },
+            ],
+        }),
         computed: {
             ...mapGetters([
                 'getSidebarStatus',
@@ -77,11 +112,31 @@
 <style scoped>
 
     .md-app {
+        font-family: 'Roboto Mono', monospace;
         height: 100vh;
     }
 
+    .md-drawer {
+        max-width: calc(100vw - 100px);
+        width: 320px;
+    }
+
     .md-content {
+        background-color: var(--content-background-color);
         flex: 1 1 100%;
+    }
+
+    .md-list-item-content {
+        justify-content: flex-start;
+    }
+
+    .md-list-item-content h4 {
+        flex: 1 1 100%;
+        font-size: 1rem;
+    }
+
+    .md-list-item-content h4:hover {
+        text-decoration: underline;
     }
 
     .md-icon-button {
