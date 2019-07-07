@@ -106,7 +106,6 @@
 
     .md-card {
         display: flex;
-        font-family: 'Roboto Mono', monospace;
         flex-flow: column nowrap;
         font-weight: bold;
         height: 350px;
