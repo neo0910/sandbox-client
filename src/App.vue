@@ -64,7 +64,7 @@
                     expand: false,
                     name: 'Simple Counter',
                     route: { name: 'myCounter' },
-                    support: [ 'Vue.js', 'Vuex', 'Vue Material' ],
+                    support: [ 'Vuex' ],
                 },
             ],
         }),
@@ -92,8 +92,9 @@
                 this.toggleDrawerByRoute();
             },
         },
-        created () {
+        async created () {
             this.toggleDrawerByRoute();
+            const res = await axios.get('/social-networks');
         },
         methods: {
             ...mapMutations([
