@@ -1,9 +1,6 @@
 import Vue from 'vue';
-
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css';
-import 'vue-material/dist/theme/default.css';
-Vue.use(VueMaterial);
+import 'tachyons/css/tachyons.min.css';
+import '@/assets/css/styles.css';
 
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
@@ -21,7 +18,6 @@ import store from './store';
 import router from './routes';
 import App from './App';
 
-Vue.prototype.$isMobile = window.screen.availWidth <= 600;
 Vue.config.productionTip = false;
 
 new Vue({
