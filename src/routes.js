@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router';
 
 import MyCounter from './components/MyCounter';
+import Bio from '@/components/Bio';
 
 const routes = [
     {
@@ -8,10 +9,17 @@ const routes = [
         name: 'home',
     },
     {
+        path: '/bio',
+        name: 'Bio',
+        components: {
+            Bio,
+        },
+    },
+    {
         path: '/my-counter',
         name: 'myCounter',
         components: {
-            myCounter: MyCounter,
+            MyCounter,
         },
     },
 ];
