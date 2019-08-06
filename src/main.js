@@ -9,7 +9,6 @@ window.axios = require('axios');
 
 if (typeof process.env.VUE_APP_BASE_API !== 'undefined') {
     window.axios.defaults.baseURL = process.env.VUE_APP_BASE_API;
-    console.log('AXIOS base url: ' + process.env.VUE_APP_BASE_API);
 } else {
     alert('VUE_APP_BASE_API not defined, create .env file!');
 }
