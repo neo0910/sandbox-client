@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row-ns flex-column-m flex-column self-center">
+    <div class="flex flex-row-ns flex-column-m flex-column justify-center relative bio-wrapper">
         <div class="tc pt4 pb2 pv5-ns self-center mr4-ns">
             <img
                 src="https://media.licdn.com/dms/image/C5603AQFAbbfrr4vDBQ/profile-displayphoto-shrink_200_200/0?e=1570665600&v=beta&t=XimOmajQgGeWSErdL64_WnfMK0Fty_RUSs4OR7Teuc0"
@@ -70,5 +70,12 @@
 </script>
 
 <style scoped>
+
+    @media screen and (min-width: 30em) {
+        .bio-wrapper {
+            top: 50vh;
+            transform: translateY(-50%);
+        }
+    }
 
 </style>
