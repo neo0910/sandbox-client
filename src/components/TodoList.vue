@@ -31,7 +31,7 @@
             </fieldset>
         </form>
 
-        <div class="mw7 center">
+        <div class="mw7 center relative todo-list__container">
             <article
                 v-for="(todo, i) in getTodos"
                 :key="todo._id"
@@ -63,6 +63,17 @@
                     >
                 </div>
             </article>
+            <transition
+                v-if="todoListLoading"
+                appear
+                mode="out-in"
+                name="fade"
+            >
+                <i
+                    key="icon-loader"
+                    class="fa fa-biohazard fa-2x fa-spin dark-gray"
+                />
+            </transition>
         </div>
     </div>
 </template>
@@ -76,6 +87,7 @@
         data: () => ({
             todo: '',
             todoForUpdate: null,
+            todoListLoading: false,
         }),
         computed: {
             ...mapGetters([
@@ -83,11 +95,15 @@
             ]),
         },
         async created () {
+            this.todoListLoading = true;
+
             try {
                 await this.fetchTodos();
             } catch (e) {
                 console.dir(e);
             }
+
+            this.todoListLoading = false;
         },
         methods: {
             ...mapActions([
@@ -149,6 +165,17 @@
 
 <style scoped>
 
+    .todo-list__container {
+        min-height: 50vh;
+    }
+
+    .todo-list__container > i {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50% -50%);
+    }
+
     .todo__text {
         outline: transparent;
     }
@@ -189,6 +216,24 @@
         top: 0;
         transform: translateX(-50%);
         width: 2px;
+    }
+
+    .fade-enter-active {
+        animation: fade .5s;
+    }
+
+    .fade-leave-active {
+        animation: fade .25s reverse;
+    }
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        
+        100% {
+            opacity: 1;
+        }
     }
 
 </style>
