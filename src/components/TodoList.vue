@@ -53,12 +53,14 @@
                 />
 
                 <div class="pa3 bg-dark-gray br2 br--bottom">
-                    <textarea
-                        :ref="`todoText${todo._id}`"
+                    <input
+                        :ref="`todoInput${todo._id}`"
                         v-model="todo.text"
-                        :class="todoTextClasses(todo._id)"
-                        :readonly="isTodoActive(todo._id)"
-                    />
+                        :class="todoInputClasses(todo._id)"
+                        :readonly="!isTodoActive(todo._id)"
+                        type="text"
+                        @keypress.enter="update(todo)"
+                    >
                 </div>
             </article>
         </div>
@@ -97,9 +99,10 @@
             isTodoActive (id) {
                 return this.todoForUpdate === id;
             },
-            todoTextClasses (id) {
+            todoInputClasses (id) {
                 return {
-                    'f6 f5-ns lh-copy b--transparent br2-ns w-100 todo__text': true,
+                    'f6 f5-ns lh-copy pa2 br2-ns w-100 white bg-transparent ba b--transparent': true,
+                    'todo__text': true,
                     'todo__text_active': this.isTodoActive(id),
                 };
             },
@@ -127,7 +130,7 @@
             async update (todo) {
                 if (!this.todoForUpdate) {
                     this.todoForUpdate = todo._id;
-                    this.$refs[`todoText${todo._id}`][0].focus();
+                    this.$refs[`todoInput${todo._id}`][0].focus();
                     return;
                 }
 
@@ -148,12 +151,10 @@
 
     .todo__text {
         outline: transparent;
-        resize: none;
-        /* pointer-events: none; */
     }
 
-    .todo__text > .todo__text_active {
-        /* pointer-events: auto; */
+    .todo__text.todo__text_active {
+        border: 1px solid #19a974;
     }
 
     .todo__remove-button {

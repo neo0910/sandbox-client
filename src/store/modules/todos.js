@@ -44,8 +44,9 @@ const todos = {
             const todos = _cloneDeep(getters.getTodos);
 
             try {
-                const res = await axios.put(`todos/${todo._id}`, todo);
-                console.log(res);
+                await axios.put(`todos/${todo._id}`, todo);
+                todos.find(el => el._id === todo._id).text = todo.text
+                commit('setTodos', todos);
             } catch (e) {
                 throw new Error(e);
             }
