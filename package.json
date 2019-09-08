@@ -1,51 +1,53 @@
 {
-  "name": "sandbox-client",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve --mode development",
-    "build": "vue-cli-service build --mode production && ./deploy.sh",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.6",
-    "vuex": "^3.1.1"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "babel-eslint": "^10.0.1",
-    "css-loader": "^3.1.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "tachyons": "^4.10.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "sandbox-client",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve --mode development",
+        "build": "vue-cli-service build --mode production && ./deploy.sh",
+        "lint": "vue-cli-service lint"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "dependencies": {
+        "axios": "^0.19.0",
+        "core-js": "^2.6.5",
+        "lodash.clonedeep": "^4.5.0",
+        "vue": "^2.6.10",
+        "vue-router": "^3.0.6",
+        "vuex": "^3.1.1"
+    },
+    "devDependencies": {
+        "@fortawesome/fontawesome-free": "^5.10.2",
+        "@vue/cli-plugin-babel": "^3.8.0",
+        "@vue/cli-plugin-eslint": "^3.8.0",
+        "@vue/cli-service": "^3.8.0",
+        "babel-eslint": "^10.0.1",
+        "css-loader": "^3.1.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "tachyons": "^4.10.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "rules": {},
+        "parserOptions": {
+            "parser": "babel-eslint"
+        }
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
 }

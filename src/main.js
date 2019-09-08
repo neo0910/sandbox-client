@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import 'tachyons/css/tachyons.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@/assets/css/styles.css';
 
 import VueRouter from 'vue-router';
@@ -13,9 +14,9 @@ if (typeof process.env.VUE_APP_BASE_API !== 'undefined') {
     alert('VUE_APP_BASE_API not defined, create .env file!');
 }
 
-import store from './store';
-import router from './routes';
-import App from './App';
+import store from '@/store';
+import router from '@/routes';
+import App from '@/App';
 
 Vue.config.productionTip = false;
 
