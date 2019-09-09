@@ -41,10 +41,10 @@
                     class="far fa-edit absolute pointer white todo__edit-button"
                     @click="update(todo)"
                 />
-
-                <button
-                    class="bn rotate-45 absolute pointer outline-transparent bg-transparent todo__remove-button"
-                    @click="remove(todo._id)"
+                
+                <i
+                    class="fas fa-times absolute pointer white todo__remove-button"
+                    @click="remove(todo)"
                 />
 
                 <h1
@@ -71,7 +71,7 @@
             >
                 <i
                     key="icon-loader"
-                    class="fa fa-biohazard fa-2x fa-spin dark-gray"
+                    class="fas fa-biohazard fa-2x fa-spin dark-gray"
                 />
             </transition>
         </div>
@@ -136,9 +136,9 @@
 
                 this.todo = '';
             },
-            async remove (id) {
+            async remove (todo) {
                 try {
-                    await this.deleteTodo(id);
+                    await this.deleteTodo(todo._id);
                 } catch (e) {
                     console.dir(e);
                 }
@@ -170,10 +170,9 @@
     }
 
     .todo-list__container > i {
-        left: 50%;
+        left: calc(50% - 18px);
         position: absolute;
-        top: 50%;
-        transform: translate(-50% -50%);
+        top: calc(50% - 16px);
     }
 
     .todo__text {
@@ -184,38 +183,15 @@
         border: 1px solid #19a974;
     }
 
-    .todo__remove-button {
-        height: 16px;
-        right: 10px;
-        top: 10px;
-        width: 16px;
-    }
-
     .todo__edit-button {
         right: 32px;
         top: 10px;
     }
 
-    .todo__remove-button:before {
-        background-color: white;
-        content: '';
-        height: 2px;
-        left: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-    }
-
-    .todo__remove-button:after {
-        background-color: white;
-        content: '';
-        height: 100%;
-        left: 50%;
-        position: absolute;
-        top: 0;
-        transform: translateX(-50%);
-        width: 2px;
+    .todo__remove-button {
+        font-size: 18px;
+        right: 10px;
+        top: 10px;
     }
 
     .fade-enter-active {
