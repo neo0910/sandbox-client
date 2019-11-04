@@ -2,7 +2,7 @@
     <div class="flex flex-row-ns flex-column-m flex-column justify-center relative bio-wrapper">
         <div class="tc pt4 pb2 pv5-ns self-center mr4-ns">
             <img
-                src="https://media.licdn.com/dms/image/C5603AQFAbbfrr4vDBQ/profile-displayphoto-shrink_200_200/0?e=1570665600&v=beta&t=XimOmajQgGeWSErdL64_WnfMK0Fty_RUSs4OR7Teuc0"
+                src="https://media.licdn.com/dms/image/C5603AQFAbbfrr4vDBQ/profile-displayphoto-shrink_200_200/0?e=1578528000&v=beta&t=Nb8ZSMdqAmhuhH5muh4akEEgzqaJkQVWCEKaqZdvlCY"
                 class="br3 ba b--black-10 h4-ns w4-ns"
                 alt="avatar"
             >
