@@ -31,7 +31,7 @@
             </header>
             <section class="pv3 pv4-ns">
                 <p class="times lh-copy measure f4 mt0 mb0 mb2-ns">
-                    Hello! I'm working with JavaScript from the end of 2017.
+                    Hello! I'm working with JavaScript.
                 </p>
                 <p class="times lh-copy measure f4 mt0 mb0 mb2-ns">
                     My current stack of technologies is: Vue.js and it's ecosystem - Vuex, Vue-router, Vuetify, etc.
