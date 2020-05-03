@@ -25,5 +25,21 @@
         margin: 0;
         top: 50%;
         transform: translate(-50%, -50%);
+        white-space: nowrap;
+    }
+    @media screen and (max-width: 960px) {
+        .clock {
+            font-size: 6rem;
+        }
+    }
+    @media screen and (max-width: 640px) {
+        .clock {
+            font-size: 4.5rem;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .clock {
+            font-size: 3rem;
+        }
     }
 </style>
