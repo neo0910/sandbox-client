@@ -5,19 +5,7 @@
 </template>
 
 <script>
-
     export default {
         name: 'App',
-        data: () => ({
-            
-        }),
-        methods: {
-            
-        },
     };
-
 </script>
-
-<style scoped>
-
-</style>
